@@ -1,0 +1,55 @@
+<% include header.ejs %>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+
+            <div class="col-md-12">
+                <div class="login d-flex align-items-center py-5">
+
+                    <!-- Demo content-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-7 mx-auto">
+                                <h3 class="display-4">Alta de Candidatos</h3>
+
+                                <form id="formulario" action="/api/votapi" method="POST">
+                                    <div class="form-group mb-3">
+                                        <input id="nombreApellido" name="nombreApellido" type="text" placeholder="Nombre Completo" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <select class="custom-select mb-3 form-group rounded-pill border-0 shadow-sm px-4" name="partido">
+                                        <option selected>Partido Político</option>
+                                        <option name="Partido Rojo" value="Partido Rojo">Partido Rojo</option>
+                                        <option name="Partido Naranja" value="Partido Naranja">Partido Naranja</option>
+                                        <option name="Partido Verde" value="Partido Verde">Partido Verde</option>
+                                      </select>
+                                    <div class="form-group input-group">
+                                            <label class="input-group-addon" style="vertical-align:top;">
+                                                <span class="btn btn-primary rounded-pill border-0 shadow-sm px-4">
+                                                    Cargar Foto de Candidato <input type="file" onchange="onFileSelected(event);" class="d-none">
+                                                </span>
+                                            </label>
+                                            <input class="form-control" type="text" readonly id="fotoFile" name="fotoFile" placeholder="Foto Candidato" required>
+                                            <input class="d-none" type="text" id="foto" name="foto">
+                                        </div>
+
+                                    <button type="submit" id="boton_enviar" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Entrar</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
+
+                </div>
+            </div>
+            <!-- End -->
+
+        </div>
+    </div>
+
+    </main>
+    <script type="text/JavaScript" src="/javascript/altaform.js"></script>
+
+
+
+    <% include footer.ejs %>
+   

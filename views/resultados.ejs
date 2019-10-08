@@ -1,0 +1,40 @@
+<% include header.ejs %>
+    <!-- RESULTADOS  -->
+    <div class="card-body candidatotable">
+        <section class="our-webcoderskull padding-lg">
+            <div class="container">
+                <div class="row heading heading-icon">
+                    <h2 class="text-dark">CANDIDATOS</h2>
+
+                </div>
+                <ul class="row">
+                    <% locals.candidatos.forEach((item) => { %>
+                        <li class="col-12 col-md-6 col-lg-3">
+                            <div class="cnt-block equal-hight" style="height: 349px;">
+                                <img class="img img-fluid d-block mx-auto rounded img-thumbnail" src="<%= item.foto %>">
+                                <h3>
+                                    <%= item.nombreApellido %>
+                                </h3>
+                                <p>
+                                    <%= item.partido %>
+                                </p>
+                                <p>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" id="VotosProgressBar" role="progressbar" style="width:<%= item.votos%>%;" aria-valuenow="<%= item.votos%>" aria-valuemin="0" aria-valuemax="100">
+                                            <%= item.votos %> Votos</div>
+                                    </div>
+                                </p>
+                            </div>
+                        </li>
+                        <% }); %>
+                </ul>
+                <p>
+                    <a href="/logout">
+                        <button type="text" class="btn btn-primary text-uppercase mb-2 rounded-pill shadow-sm" type="text">SALIR</button>
+                </p>
+            </div>
+        </section>
+    </div>
+    <script src="/javascript/altaform.js"></script>
+    <% include footer.ejs %>

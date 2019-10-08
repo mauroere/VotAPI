@@ -1,0 +1,40 @@
+<% include header.ejs %>
+
+    <div class="container-fluid">
+        <div class="row no-gutter">
+
+            <div class="col-md-12">
+                <div class="login d-flex align-items-center py-5">
+
+                    <!-- Demo content-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-7 mx-auto">
+                                <h3 class="display-4">Ingreso Administrador</h3>
+                                <p class="text-muted mb-4">Usuario: demo // Contraseña: demo</p>
+                                <form id="fomulario" method="POST" action="/admin">
+                                    <div class="form-group mb-3">
+                                        <input id="usuariolog" name="usuariolog" type="text" placeholder="demo" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input id="passlog" type="password" name="passlog" placeholder="demo" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                    </div>
+
+                                    <button id="boton_enviar" type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Entrar</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
+
+                </div>
+            </div>
+            <!-- End -->
+
+        </div>
+    </div>
+
+    </main>
+
+    <% include footer.ejs %>

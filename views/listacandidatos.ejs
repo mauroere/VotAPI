@@ -1,0 +1,51 @@
+<% include header.ejs %>
+    <!-- Candidato -->
+    <div class="card-body candidatotable">
+        <section class="our-webcoderskull padding-lg">
+            <div class="container">
+                <div class="row heading heading-icon">
+                    <h2 class="margintop text-dark">CANDIDATOS</h2>
+
+                </div>
+                <ul class="row">
+
+                    <% locals.candidatos.forEach((item) => { %>
+
+                        <li class="col-12 col-md-6 col-lg-3">
+                            <div class="cnt-block equal-hight" style="height: 349px;">
+                                <img class="img img-fluid d-block mx-auto rounded img-thumbnail" src="<%= item.foto %>">
+                                <h3>
+                                    <%= item.nombreApellido %>
+                                </h3>
+                                <p>
+                                    <%= item.partido %>
+                                </p>
+
+                                <form id="formulario" action="/api/votapi/<%= item._id %>/" onsubmit="return confirmation()" method="POST">
+                                    <ul class="follow-us clearfix">
+                                        <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" type="text">VOTAR</button>
+                                    </ul>
+
+
+
+                            </div>
+                        </li>
+
+
+                        </form>
+                        <% }); %>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="/javascript/altaform.js"></script>
+    <script type="text/javascript">
+        function confirmation() {
+            if (confirm("Esta seguro de enviar su voto?")) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+    <% include footer.ejs %>
